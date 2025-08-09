@@ -1,9 +1,15 @@
+import { Outlet } from "react-router-dom";
+import Header from "./components/layout/Header";
+
 function App() {
   return (
     <>
-     <h1 className="text-red-500 text-4xl">Hello World</h1>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
