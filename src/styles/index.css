@@ -1,1 +1,42 @@
+@import "./style.css";
 @import "tailwindcss";
+
+/* TODO: set up design tokens and variables for this project */
+@theme {
+  /* 🎨 Colors */
+  --color-primary: #4f709c;
+  --color-base-white: #f0f0f0;
+  --color-base-black: #142033;
+
+  /* 🖋 Fonts */
+  --font-inter: Inter, sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
+  /* 8pt spatial system */
+  --spacing-8: 0.5rem;
+  --spacing-16: 1rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --spacing-80: 5rem;
+  --spacing-96: 6rem;
+  --spacing-128: 8rem;
+  --spacing-160: 10rem;
+  --spacing-192: 12rem;
+  --spacing-224: 14rem;
+  --spacing-256: 16rem;
+}
+
+@layer utilities {
+  .container-custom {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-56);
+    padding-right: var(--spacing-56);
+    max-width: 1280px; /* You can adjust */
+  }
+}
