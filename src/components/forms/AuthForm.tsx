@@ -3,7 +3,11 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-export default function AuthForm({ methods, onSubmit}: AuthFormProps) {
+export default function AuthForm({
+  methods,
+  onSubmit,
+  formType,
+}: AuthFormProps) {
   const {
     register,
     formState: { errors },
@@ -44,7 +48,7 @@ export default function AuthForm({ methods, onSubmit}: AuthFormProps) {
           className="self-start px-18 text-base-white rounded-md shadow-md"
           type="submit"
         >
-          Sign in
+          {formType === "sign in" ? "Sign in" : "Sign up"}
         </Button>
       </div>
     </form>
