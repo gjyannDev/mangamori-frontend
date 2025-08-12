@@ -1,5 +1,4 @@
 import type { AuthFormProps } from "@/types/auth.types";
-import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -47,12 +46,6 @@ export default function AuthForm({ methods, onSubmit}: AuthFormProps) {
         >
           Sign in
         </Button>
-        <p className="font-inter text-sm">
-          Don't have an account?
-          <span className="text-primary">
-            <Link to="signup"> Sign up.</Link>
-          </span>
-        </p>
       </div>
     </form>
   );

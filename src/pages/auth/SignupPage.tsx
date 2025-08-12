@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-export default function SigninPage() {
+export default function SignupPage() {
   const methods = useForm<AuthFormValues>({
     resolver: zodResolver(signInSchema),
   });
@@ -21,19 +21,19 @@ export default function SigninPage() {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-2">
           <h1 className="font-playfair font-bold text-4xl">
-            Welcome Back, Reader!
+            Join MangaMori Today
           </h1>
           <p className="font-inter max-w-sm">
-            Continue your manga journey, track your progress, and explore new
-            adventures.
+            Create your personal manga library, discover trending titles, and
+            log every chapter you read.
           </p>
         </div>
         <div className="flex flex-col gap-10">
-          <AuthForm methods={methods} onSubmit={onSubmit} formType="sign in" />
+          <AuthForm methods={methods} onSubmit={onSubmit} formType="sign up" />
           <p className="font-inter text-sm">
-            Don't have an account?
+            Already have an account?
             <span className="text-primary">
-              <Link to="/signup"> Sign up.</Link>
+              <Link to="/signin"> Sign in.</Link>
             </span>
           </p>
         </div>
