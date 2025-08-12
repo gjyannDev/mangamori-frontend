@@ -1,5 +1,6 @@
-@import "./style.css";
 @import "tailwindcss";
+@import "./style.css";
+@tailwind utilities;
 
 /* TODO: set up design tokens and variables for this project */
 @theme {
@@ -38,5 +39,15 @@
     padding-left: var(--spacing-56);
     padding-right: var(--spacing-56);
     max-width: 1280px; /* You can adjust */
+  }
+}
+
+@layer components {
+  .input-primary {
+    @apply border border-gray-300 rounded-md px-3 py-2 focus:border-primary;
+  }
+
+  .button-primary {
+    @apply text-base-white font-inter font-medium;
   }
 }

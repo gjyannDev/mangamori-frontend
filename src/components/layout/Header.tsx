@@ -21,7 +21,7 @@ export default function Header() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to="">Discover</Link>
+                <Link to="discover">Discover</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -33,7 +33,11 @@ export default function Header() {
         </NavigationMenu>
       </div>
       <div className="flex items-center gap-4">
-        <p className="whitespace-nowrap">Sign in</p>
+        <p className="whitespace-nowrap">
+          <Link to="signin">
+            Sign in
+          </Link>
+        </p>
         <div className="flex items-center relative w-[180px]">
           <Input
             type="text"
