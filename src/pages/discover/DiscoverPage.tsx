@@ -10,10 +10,11 @@ export default function DiscoverPage() {
 
   const { trendingData } = context;
 
+  console.log("trendingData: ", trendingData);
+
   return (
     <div>
       <h2>Trending Items</h2>
-      <pre>{JSON.stringify(trendingData, null, 2)}</pre>
     </div>
   );
 }

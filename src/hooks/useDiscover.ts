@@ -10,13 +10,13 @@ export function useDiscover() {
     async function fetchData() {
       try {
         const get_trending = await getTrending();
-        setTrendingData(get_trending.data);
+        setTrendingData(get_trending);
       } catch (error: unknown) {
         if (error instanceof Error) {
           console.error("Error fetching data: ", error.message);
           setError(error);
         } else {
-          console.error("Unkown error: ", error);
+          console.error("Unkown error: ", error); 
         }
       } finally {
         setLoading(false);
@@ -24,7 +24,7 @@ export function useDiscover() {
     }
 
     fetchData();
-  });
+  }, []);
 
   return {
     trendingData,
