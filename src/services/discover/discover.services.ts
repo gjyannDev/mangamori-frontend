@@ -7,7 +7,43 @@ export async function getTrending() {
     return res.data;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("error fetching treding data: ", error.message);
+      console.error(
+        "error fetching top rated data from the backend: ",
+        error.message
+      );
+    } else {
+      console.error("unexpected error", error);
+    }
+  }
+}
+export async function getTopRated() {
+  try {
+    const res = await api.get("/discover/toprated");
+
+    return res.data;
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(
+        "error fetching top rated data from the backend: ",
+        error.message
+      );
+    } else {
+      console.error("unexpected error", error);
+    }
+  }
+}
+
+export async function getNewRelease() {
+  try {
+    const res = await api.get("/discover/newrelease");
+
+    return res.data;
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(
+        "error fetching new release data from the backend: ",
+        error.message
+      );
     } else {
       console.error("unexpected error", error);
     }

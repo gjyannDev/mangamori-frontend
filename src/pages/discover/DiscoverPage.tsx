@@ -8,9 +8,9 @@ export default function DiscoverPage() {
     throw new Error("TrendingList must be used within a DiscoverProvider");
   }
 
-  const { trendingData } = context;
+  const { combinedDiscoverData } = context;
 
-  console.log("trendingData: ", trendingData);
+  console.log("combined data: ", combinedDiscoverData);
 
   return (
     <div>
