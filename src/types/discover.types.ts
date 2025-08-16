@@ -7,6 +7,7 @@ export interface DiscoverContextType {
   combinedDiscoverData: {
     title: string;
     items: DiscoverData[];
+    type: "trending" | "top rated" | "new release";
   }[];
 }
 
@@ -36,4 +37,9 @@ export interface DiscoverData {
     unavailableChaptersCount: number;
   };
   coverUrl: string;
+}
+
+export interface MangaCardTypes {
+  mangaDetails: DiscoverData;
+  type: "trending" | "top rated" | "new release";
 }

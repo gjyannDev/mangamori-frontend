@@ -41,9 +41,21 @@ export function useDiscover() {
 
   const combinedDiscoverData = useMemo(() => {
     return [
-      { title: "Trending Series", items: trendingData?.slice(0, 4) || [] },
-      { title: "Top Rated Series ", items: topRatedData?.slice(0, 4) || [] },
-      { title: "New Releases", items: newReleaseData?.slice(0, 4) || [] },
+      {
+        title: "Trending Series",
+        type: "trending" as const,
+        items: trendingData?.slice(0, 4) || [],
+      },
+      {
+        title: "Top Rated Series ",
+        type: "top rated" as const,
+        items: topRatedData?.slice(0, 4) || [],
+      },
+      {
+        title: "New Releases",
+        type: "new release" as const,
+        items: newReleaseData?.slice(0, 4) || [],
+      },
     ];
   }, [trendingData, topRatedData, newReleaseData]);
 
