@@ -1,14 +1,18 @@
 import type React from "react";
 
+export type DiscoverType = "trending" | "toprated" | "newrelease";
+
+export interface CombinedDiscoverData {
+  title: string;
+  type: DiscoverType;
+  items: DiscoverData[];
+}
+
 export interface DiscoverContextType {
-  trendingData: DiscoverData[];
-  topRatedData: DiscoverData[];
-  newReleaseData: DiscoverData[];
-  combinedDiscoverData: {
-    title: string;
-    items: DiscoverData[];
-    type: "trending" | "top rated" | "new release";
-  }[];
+  trending: DiscoverData[];
+  topRated: DiscoverData[];
+  newRelease: DiscoverData[];
+  combinedDiscoverData: CombinedDiscoverData[];
 }
 
 export interface DiscoverProviderProps {
@@ -41,5 +45,23 @@ export interface DiscoverData {
 
 export interface MangaCardTypes {
   mangaDetails: DiscoverData;
-  type: "trending" | "top rated" | "new release";
+  type: DiscoverType;
+}
+
+export interface MangaContextType {
+  manga: DiscoverData;
+}
+
+export interface MangaProviderProps {
+  children: React.ReactNode;
+}
+
+export interface MangaLoaderTypes {
+  id: string;
+  type: string;
+}
+
+export interface MangaByIdTypes {
+  id: string | undefined;
+  type: string | undefined;
 }

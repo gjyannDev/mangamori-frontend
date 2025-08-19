@@ -1,17 +1,17 @@
-import { useDiscover } from "@/hooks/useDiscover";
+import { useDiscoverOverview } from "@/hooks/discover/useDiscoverOverview";
 import type { DiscoverProviderProps } from "@/types/discover.types";
 import { DiscoverContext } from "./discover.context";
 
 export function DiscoverProvider({ children }: DiscoverProviderProps) {
-  const { trendingData, topRatedData, newReleaseData, combinedDiscoverData } =
-    useDiscover();
+  const { trending, topRated, newRelease, combinedDiscoverData } =
+    useDiscoverOverview();
 
   return (
     <DiscoverContext.Provider
       value={{
-        trendingData,
-        topRatedData,
-        newReleaseData,
+        trending,
+        topRated,
+        newRelease,
         combinedDiscoverData,
       }}
     >
