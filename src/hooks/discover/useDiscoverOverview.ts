@@ -25,7 +25,7 @@ export function useDiscoverOverview() {
       items: newRelease.data?.slice(0, 4) ?? [],
     },
   ];
-
+  
   return {
     trending: trending.data,
     topRated: topRated.data,
