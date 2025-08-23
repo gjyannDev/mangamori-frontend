@@ -9,3 +9,8 @@ export interface AuthFormProps {
   onSubmit: SubmitHandler<AuthFormValues>;
   formType: "sign in" | "sign up";
 }
+
+export interface AuthTypes {
+  email: string,
+  password: string,
+}

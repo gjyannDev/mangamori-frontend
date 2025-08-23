@@ -1,5 +1,7 @@
 import AuthForm from "@/components/forms/AuthForm";
 import { signInSchema } from "@/schemas/auth/user.schema";
+import { signUp } from "@/services/auth/auth.services";
+// import { signUp } from "@/services/auth/auth.services";
 import type { AuthFormValues } from "@/types/auth.types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
@@ -10,9 +12,14 @@ export default function SignupPage() {
     resolver: zodResolver(signInSchema),
   });
 
-  const onSubmit: SubmitHandler<AuthFormValues> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<AuthFormValues> = async (data) => {
+    try {
+      const result = await signUp(data);
 
+      console.log("User signed up: ", result);
+    } catch (error: unknown) {
+      console.error("Sign up unsucessfull.", error);
+    }
     methods.reset();
   };
 
