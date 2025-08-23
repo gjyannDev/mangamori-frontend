@@ -1,5 +1,5 @@
 import AuthForm from "@/components/forms/AuthForm";
-import { signInSchema } from "@/schemas/auth/user.schema";
+import { signUpSchema } from "@/schemas/auth/user.schema";
 import { signUp } from "@/services/auth/auth.services";
 // import { signUp } from "@/services/auth/auth.services";
 import type { AuthFormValues } from "@/types/auth.types";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function SignupPage() {
   const methods = useForm<AuthFormValues>({
-    resolver: zodResolver(signInSchema),
+    resolver: zodResolver(signUpSchema),
   });
 
   const onSubmit: SubmitHandler<AuthFormValues> = async (data) => {
